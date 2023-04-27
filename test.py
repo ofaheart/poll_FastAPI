@@ -47,3 +47,4 @@ print(result_list)
 
 # delete all
 x = col.delete_many({"num": 1})
+
