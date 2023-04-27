@@ -1,0 +1,26 @@
+<html lang="en">
+   <head>
+      <title>Poll</title>
+      <script src="/templates/js/chart.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+      <!-- <script src="./templates/js/main.js"></script> -->
+   </head>
+   <body>
+      <div style="width:50%; display: block; margin: 0px auto; text-align: center;">
+        <h1>POLL</h1>
+        <canvas id="VoteChart"></canvas></br>
+        <button value="Red" onclick="Votselect('Red')">Red</button>
+        <button value="Blue" onclick="Votselect('Blue')">Blue</button>
+        <button value="Yellow" onclick="Votselect('Yellow')">Yellow</button>
+        <button value="Green" onclick="Votselect('Green')">Green</button>
+        <button value="Purple" onclick="Votselect('Purple')">Purple</button>
+        <button value="Orange" onclick="Votselect('Orange')">Orange</button>
+        </br>
+        <button value="Reset" onclick="VotReset()">Reset</button></br>
+        <!-- <button value="test" onclick="sendMessage('test')">Test</button></br> -->
+      </div>
+   </body>
+   <script>
+      setChart({{ votes }})
+   </script>
+</html>
