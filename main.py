@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request, WebSocket
+from fastapi import FastAPI, Request, WebSocket, WebSocketDisconnect
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from pymongo.mongo_client import MongoClient
@@ -40,6 +40,8 @@ class ConnectionManager:
             await connection.send_json(message)
 
 
+
+
 manager = ConnectionManager()
 
 
@@ -66,9 +68,11 @@ async def user_vote(websocket: WebSocket):
                 else:
                     reset_vote()
 
-            votes_now = get_vote()
-            vote_now = vote_cal(votes_now)
-            await manager.broadcast(vote_now)
+                votes_now = get_vote()
+                vote_now = vote_cal(votes_now)
+                await manager.broadcast(vote_now)
+    except WebSocketDisconnect:
+        manager.disconnect(websocket)
     except Exception as ex:
         print(ex)
 

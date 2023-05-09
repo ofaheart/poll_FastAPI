@@ -1,0 +1,5 @@
+fastapi
+pymongo
+Jinja2
+websockets
+uvicorn
