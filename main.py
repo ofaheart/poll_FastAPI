@@ -39,12 +39,7 @@ class ConnectionManager:
         for connection in self.active_connections:
             await connection.send_json(message)
 
-
-
-
 manager = ConnectionManager()
-
-
 
 @app.get("/")
 async def get(request: Request):
