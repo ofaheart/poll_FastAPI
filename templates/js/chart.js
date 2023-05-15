@@ -1,5 +1,5 @@
 // 準備畫圖的資料
-var ws = new WebSocket("ws://localhost:8000/sendVote");
+var ws = new WebSocket("ws://canvas-spark-370003.el.r.appspot.com/sendVote");
 var Chart;
 
 function setChart(vote_cnt){
