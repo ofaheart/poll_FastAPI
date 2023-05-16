@@ -1,5 +1,5 @@
 // 準備畫圖的資料
-var ws = new WebSocket("wss://fast-api-demo-386901.as.r.appspot.com/sendVote");
+var ws = new WebSocket("wss://poll-fastapi-demo/sendVote");
 var Chart;
 
 function setChart(vote_cnt){
